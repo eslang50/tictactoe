@@ -11,7 +11,6 @@
 // player1 is 1
 // player2 is 2
 function checkWinner(board) {
-    let winner = false
     // coords
     // 0,0  0,1  0,2  0,3
     // 1,0  1,1  1,2  1,3
@@ -62,14 +61,14 @@ function checkWinner(board) {
     }
     for(const combo of combinations) {
         if(combo.every((cell) => player1Combos.includes(cell))) {
-            winner = true
+            return "Player 1 wins!"
         }
         if(combo.every((cell) => player2Combos.includes(cell))) {
-            winner = true
+            return "Player 2 wins!"
         }
     }
 
-    return winner
+    return anyMovesLeft(board) ? "No player has won yet, more moves to be played" : "Draw!"
     
 }
 
@@ -100,5 +99,12 @@ let boardWinner = [
     [2, 1, 1, 2],
     [1, 2, 1, 1],
     [1, 1, 2, 1]
+]
+
+let boardMoves = [
+    [1, 1, 2, 1],
+    [2, 1, 0, 2],
+    [1, 0, 1, 1],
+    [1, 1, 0, 0]
 ]
 
