@@ -84,7 +84,7 @@ function anyMovesLeft(board) {
 
 // true means game is over, false if not
 function isGameOver(board) {
-    return checkWinner(board) || !anyMovesLeft(board)
+    return checkWinner(board) === 'Player 1 wins!' || checkWinner(board) === 'Player 1 wins!' || checkWinner(board) === 'Draw!'
 }
 
 let boardDraw = [
